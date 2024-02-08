@@ -1,21 +1,19 @@
 #include "button.h"
 
-// Constructor
 void Button_ctor(Button * const me, 
-				 uint8_t _id,
-				 uint8_t _tick, 
-				 uint8_t _totalTicks, 
-				 uint8_t _status, 
-				 uint32_t _pinLevel)
+	             uint8_t _id,
+		     uint8_t _tick, 
+		     uint8_t _totalTicks, 
+		     uint8_t _status, 
+		     uint32_t _pinLevel)
 {
 	/* first call superclass’ ctor */
 	Device_ctor(&me->super, _status);
 	
-	/* next, initialize the attributes added by this subclass... */
 	me->id = _id;
 	me->tick = _tick;
 	me->totalTicks = _totalTicks;
-    me->lastPinLevel = _pinLevel;
+        me->lastPinLevel = _pinLevel;
 	me->onButtonEventFunc = NULL;
 }
 
