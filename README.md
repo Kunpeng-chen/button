@@ -9,9 +9,9 @@ uint32_t Button_readPin(Button * const me)
 	switch(me->id)
 	{
 		case 1:
-			return HAL_GPIO_Read Pin(GPIOx, GPIO_PIN_N); 
+			return HAL_GPIO_ReadPin(GPIOx, GPIO_PIN_N); 
 		case 2:
-			return HAL_GPIO_Read Pin(GPIOy, GPIO_PIN_N); 
+			return HAL_GPIO_ReadPin(GPIOy, GPIO_PIN_N); 
 	}
 }
 ```
@@ -26,8 +26,10 @@ void onButton1Event(uint32_t _event)
 	switch(_event)
 	{
 		case UP:
+                        //TODO
 			break;
 		case DOWN:
+                        //TODO
 			break;
 	}
 }
@@ -38,8 +40,10 @@ void onButton2Event(uint32_t _event)
 	switch(_event)
 	{
 		case UP:
+                        //TODO
 			break;
 		case DOWN:
+                        //TODO
 			break;		
 	}
 }
