@@ -2,15 +2,16 @@
 Button component implemented by OOPC. Event-driven, highly scalable; Applicable to RTOS.
 
 ## 读取引脚电平值的模版
+以stm32平台作为演示
 ```c
 uint32_t Button_readPin(Button * const me)
 {
 	switch(me->id)
 	{
 		case 1:
-			return 0; 
+			return HAL_GPIO_Read Pin(GPIOx, GPIO_PIN_N); 
 		case 2:
-			return 0;
+			return HAL_GPIO_Read Pin(GPIOy, GPIO_PIN_N); 
 	}
 }
 ```
