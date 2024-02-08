@@ -47,11 +47,18 @@ void onButton2Event(uint32_t _event)
 Button button1;
 Button_ctor(&button1, 1, 10, 0, RELEASE, 2);
 Button_setOnEventListener(&button1, onButton1Event);
-Button_tick(&button1, Button_readPin);
 Button button2;
 Button_ctor(&button2, 2, 10, 0, RELEASE, 2);
 Button_setOnEventListener(&button2, onButton2Event);
-Button_tick(&button2, Button_readPin);
+
+void timer_loop()
+{
+	...
+	Button_tick(&button1, Button_readPin);
+	Button_tick(&button2, Button_readPin);
+	...
+}
+
 ```
 
 
