@@ -20,9 +20,9 @@ typedef enum {
 // button class properties
 typedef struct {
 	// The button subclass inherits the device parent class
-  Device super; 
+        Device super; 
 
-    // properties
+        // properties
 	uint8_t id;
 	uint8_t tick;
 	uint8_t totalTicks;
