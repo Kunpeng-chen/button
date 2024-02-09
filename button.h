@@ -27,7 +27,6 @@ typedef struct {
 	uint8_t tick;
 	uint8_t totalTicks;
 	uint32_t lastPinLevel;
-	
 	void (*onButtonEventFunc)(uint32_t);
 } Button;
 
