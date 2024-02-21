@@ -3,6 +3,8 @@
 
 #include "device.h" // Base class interface
 
+#define button_tick  10
+
 enum {
 	PRESSED,
 	RELEASE,
