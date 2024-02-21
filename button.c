@@ -1,11 +1,11 @@
 #include "button.h"
 
 void Button_ctor(Button * const me, 
-	             uint8_t _id,
-		     	 uint8_t _tick, 
-		     	 uint8_t _totalTicks, 
-		     	 uint8_t _status, 
-		     	 uint32_t _pinLevel)
+	         uint8_t _id,
+		 uint8_t _tick, 
+	         uint8_t _totalTicks, 
+		 uint8_t _status, 
+		 uint32_t _pinLevel)
 {
 	/* first call superclass’ ctor */
 	Device_ctor(&me->super, _status);
