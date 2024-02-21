@@ -13,7 +13,7 @@ void Button_ctor(Button * const me,
 	me->id = _id;
 	me->tick = _tick;
 	me->totalTicks = _totalTicks;
-    me->lastPinLevel = _pinLevel;
+        me->lastPinLevel = _pinLevel;
 	me->onButtonEventFunc = NULL;
 }
 
