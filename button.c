@@ -2,10 +2,10 @@
 
 void Button_ctor(Button * const me, 
 	             uint8_t _id,
-		     uint8_t _tick, 
-		     uint8_t _totalTicks, 
-		     uint8_t _status, 
-		     uint32_t _pinLevel)
+		     	 uint8_t _tick, 
+		     	 uint8_t _totalTicks, 
+		     	 uint8_t _status, 
+		     	 uint32_t _pinLevel)
 {
 	/* first call superclass’ ctor */
 	Device_ctor(&me->super, _status);
@@ -13,7 +13,7 @@ void Button_ctor(Button * const me,
 	me->id = _id;
 	me->tick = _tick;
 	me->totalTicks = _totalTicks;
-        me->lastPinLevel = _pinLevel;
+    me->lastPinLevel = _pinLevel;
 	me->onButtonEventFunc = NULL;
 }
 
@@ -24,7 +24,15 @@ void Button_setOnEventListener(Button * const me, void (* _callback)(uint32_t))
 
 void Button_onEventFunc(Button * const me, uint32_t _event)
 {
-	me->onButtonEventFunc(_event);
+    if (NULL != me->onButtonEventFunc)
+    {
+        me->onButtonEventFunc(_event);
+    }
+    else
+    {
+        // Error handling: event handler is not set
+        // Handle the error accordingly
+    }
 }
 
 void Button_tick(Button * const me, uint32_t (* pinLevelReadFunc)(Button * const))
