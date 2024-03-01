@@ -24,15 +24,15 @@ void Button_setOnEventListener(Button * const me, void (* _callback)(uint32_t))
 
 void Button_onEventFunc(Button * const me, uint32_t _event)
 {
-    if (NULL != me->onButtonEventFunc)
-    {
-        me->onButtonEventFunc(_event);
-    }
-    else
-    {
-        // Error handling: event handler is not set
-        // Handle the error accordingly
-    }
+	if (NULL != me->onButtonEventFunc)
+	{
+	me->onButtonEventFunc(_event);
+	}
+	else
+	{
+	// Error handling: event handler is not set
+	// Handle the error accordingly
+	}
 }
 
 void Button_tick(Button * const me, uint32_t (* pinLevelReadFunc)(Button * const))
@@ -45,12 +45,12 @@ void Button_tick(Button * const me, uint32_t (* pinLevelReadFunc)(Button * const
 		if (pinLevel)
 		{
 			me->super.status = RELEASE;
-			Button_onEventFunc(me, UP);
+			Button_onEventFunc(me, BUTTON_EVENT_RELEASE_UP);
 		}
 		else
 		{
 			me->super.status = PRESSED;
-			Button_onEventFunc(me, DOWN);
+			Button_onEventFunc(me, BUTTON_EVENT_PRESS_DOWN);
 		}
 
 		me->lastPinLevel = pinLevel;
