@@ -3,7 +3,8 @@
 
 #include "device.h" // Base class interface
 
-#define button_tick  10
+//Generate 1 tick per 1ms
+#define button_tick  10  
 
 enum {
 	PRESSED,
@@ -11,12 +12,10 @@ enum {
 };
 
 typedef enum {
-	NONE,
-	UP,
-	DOWN,
-	SINGAL,
-	DOUBLE,
-	LONG,
+	BUTTON_EVENT_RELEASE_UP,
+	BUTTON_EVENT_PRESS_DOWN,
+	BUTTON_EVENT_LONG_PRESS,
+	BUTTON_EVENT_DOUBLE_CLICK
 }Button_Event;
 
 // button class properties
