@@ -25,10 +25,10 @@ void onButton1Event(uint32_t _event)
 {
 	switch(_event)
 	{
-		case UP:
+		case BUTTON_EVENT_RELEASE_UP:
                         //TODO
 			break;
-		case DOWN:
+		case BUTTON_EVENT_PRESS_DOWN:
                         //TODO
 			break;
 	}
@@ -39,10 +39,10 @@ void onButton2Event(uint32_t _event)
 {
 	switch(_event)
 	{
-		case UP:
+		case BUTTON_EVENT_RELEASE_UP:
                         //TODO
 			break;
-		case DOWN:
+		case BUTTON_EVENT_RELEASE_UP:
                         //TODO
 			break;		
 	}
