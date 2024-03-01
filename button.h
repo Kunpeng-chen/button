@@ -26,7 +26,7 @@ typedef struct {
         // properties
 	uint8_t id;
 	uint8_t tick;
-	uint8_t totalTicks;
+	uint8_t totalTicks; //totalTicks is used to extend long press and short press
 	uint32_t lastPinLevel;
 	void (*onButtonEventFunc)(uint32_t);
 } Button;
