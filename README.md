@@ -67,7 +67,7 @@ void onButton2Event(uint32_t _event)
 			//TODO
 			break;
 		case BUTTON_EVENT_RELEASE_UP:
-            //TODO
+			//TODO
 			break;		
 	}
 }
