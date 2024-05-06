@@ -21,7 +21,7 @@ uint32_t Button_readPin(Button * const me)
 ```
 
 以瑞萨mcu平台作为演示
-```
+```c
 uint32_t Button_readPin(Button *const me)
 {
     bsp_io_level_t level;
