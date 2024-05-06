@@ -73,12 +73,18 @@ void onButton2Event(uint32_t _event)
 }
 
 //多个按键实例
-Button button1;
-Button_ctor(&button1, 1, button_tick, 0, RELEASE, 1);
-Button_setOnEventListener(&button1, onButton1Event);
-Button button2;
-Button_ctor(&button2, 2, button_tick, 0, RELEASE, 1);
-Button_setOnEventListener(&button2, onButton2Event);
+int main(void)
+{
+    /*...初始化代码...*/
+
+    Button button1;
+    Button_ctor(&button1, 1, button_tick, 0, RELEASE, 1);
+    Button_setOnEventListener(&button1, onButton1Event);
+    Button button2;
+    Button_ctor(&button2, 2, button_tick, 0, RELEASE, 1);
+    Button_setOnEventListener(&button2, onButton2Event);
+}
+
 
 void tick_loop()
 {
