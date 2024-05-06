@@ -6,16 +6,40 @@ Button component implemented by OOPC. Event-driven, highly scalable; Applicable 
 ```c
 uint32_t Button_readPin(Button * const me)
 {
+	uint32_t level;
 	switch(me->id)
 	{
 		case 1:
-			return HAL_GPIO_ReadPin(GPIOx, GPIO_PIN_N); 
+			level = HAL_GPIO_ReadPin(GPIOx, GPIO_PIN_N);
+			break;
 		case 2:
-			return HAL_GPIO_ReadPin(GPIOy, GPIO_PIN_N); 
+			level = HAL_GPIO_ReadPin(GPIOy, GPIO_PIN_N);
+			break;
 	}
+	return level;
 }
 ```
 
+以瑞萨mcu平台作为演示
+```
+uint32_t Button_readPin(Button *const me)
+{
+    bsp_io_level_t level;
+
+    switch (me->id)
+    {
+    	case 1:
+        	g_ioport.p_api->pinRead(&g_ioport_ctrl, BSP_IO_PORT_XX_PIN_YY, &level);
+        	break;
+
+    	case 2:
+        	g_ioport.p_api->pinRead(&g_ioport_ctrl, BSP_IO_PORT_XX_PIN_ZZ, &level);
+        	break;
+    }
+
+    return level;
+}
+```
 
 
 ## 应用示例
