@@ -1,7 +1,7 @@
 # button
 Button component implemented by OOPC. Event-driven, highly scalable; Applicable to RTOS.
 
-## 读取引脚电平值的模版
+## 读取引脚电平值的示例
 以stm32平台作为演示
 ```c
 uint32_t Button_readPin(Button * const me)
