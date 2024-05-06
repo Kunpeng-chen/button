@@ -25,18 +25,15 @@ uint32_t Button_readPin(Button * const me)
 uint32_t Button_readPin(Button *const me)
 {
     bsp_io_level_t level;
-    
     switch (me->id)
     {
         case 1:
             g_ioport.p_api->pinRead(&g_ioport_ctrl, BSP_IO_PORT_XX_PIN_YY, &level);
             break;
-        
         case 2:
             g_ioport.p_api->pinRead(&g_ioport_ctrl, BSP_IO_PORT_XX_PIN_ZZ, &level);
             break;
     }
-    
     return level;
 }
 ```
@@ -83,15 +80,19 @@ int main(void)
     Button button2;
     Button_ctor(&button2, 2, button_tick, 0, RELEASE, 1);
     Button_setOnEventListener(&button2, onButton2Event);
+
+    while(1)
+    {
+        //TODO
+    }
 }
 
 
 void tick_loop()
 {
-    /*...*/
+    //TODO
     Button_tick(&button1, Button_readPin);
     Button_tick(&button2, Button_readPin);
-    /*...*/
 }
 
 ```
