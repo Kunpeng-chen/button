@@ -6,17 +6,17 @@ Button component implemented by OOPC. Event-driven, highly scalable; Applicable 
 ```c
 uint32_t Button_readPin(Button * const me)
 {
-	uint32_t level;
-	switch(me->id)
-	{
-		case 1:
-			level = HAL_GPIO_ReadPin(GPIOx, GPIO_PIN_N);
-			break;
-		case 2:
-			level = HAL_GPIO_ReadPin(GPIOy, GPIO_PIN_N);
-			break;
-	}
-	return level;
+    uint32_t level;
+    switch(me->id)
+    {
+        case 1:
+            level = HAL_GPIO_ReadPin(GPIOx, GPIO_PIN_N);
+            break;
+        case 2:
+            level = HAL_GPIO_ReadPin(GPIOy, GPIO_PIN_N);
+            break;
+    }
+    return level;
 }
 ```
 
@@ -25,18 +25,18 @@ uint32_t Button_readPin(Button * const me)
 uint32_t Button_readPin(Button *const me)
 {
     bsp_io_level_t level;
-
+    
     switch (me->id)
     {
-    	case 1:
-        	g_ioport.p_api->pinRead(&g_ioport_ctrl, BSP_IO_PORT_XX_PIN_YY, &level);
-        	break;
-
-    	case 2:
-        	g_ioport.p_api->pinRead(&g_ioport_ctrl, BSP_IO_PORT_XX_PIN_ZZ, &level);
-        	break;
+        case 1:
+            g_ioport.p_api->pinRead(&g_ioport_ctrl, BSP_IO_PORT_XX_PIN_YY, &level);
+            break;
+        
+        case 2:
+            g_ioport.p_api->pinRead(&g_ioport_ctrl, BSP_IO_PORT_XX_PIN_ZZ, &level);
+            break;
     }
-
+    
     return level;
 }
 ```
@@ -47,29 +47,29 @@ uint32_t Button_readPin(Button *const me)
 //button1 事件处理函数
 void onButton1Event(uint32_t _event)
 {
-	switch(_event)
-	{
-		case BUTTON_EVENT_RELEASE_UP:
-			//TODO
-			break;
-		case BUTTON_EVENT_PRESS_DOWN:
-			//TODO
-			break;
-	}
+    switch(_event)
+    {
+        case BUTTON_EVENT_RELEASE_UP:
+            //TODO
+            break;
+        case BUTTON_EVENT_PRESS_DOWN:
+            //TODO
+            break;
+    }
 }
 
 //button2 事件处理函数
 void onButton2Event(uint32_t _event)
 {
-	switch(_event)
-	{
-		case BUTTON_EVENT_RELEASE_UP:
-			//TODO
-			break;
-		case BUTTON_EVENT_PRESS_DOWN:
-			//TODO
-			break;		
-	}
+    switch(_event)
+    {
+        case BUTTON_EVENT_RELEASE_UP:
+            //TODO
+            break;
+        case BUTTON_EVENT_PRESS_DOWN:
+            //TODO
+            break;		
+    }
 }
 
 //多个按键实例
@@ -88,10 +88,10 @@ int main(void)
 
 void tick_loop()
 {
-	...
-	Button_tick(&button1, Button_readPin);
-	Button_tick(&button2, Button_readPin);
-	...
+    /*...*/
+    Button_tick(&button1, Button_readPin);
+    Button_tick(&button2, Button_readPin);
+    /*...*/
 }
 
 ```
