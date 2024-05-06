@@ -66,7 +66,7 @@ void onButton2Event(uint32_t _event)
 		case BUTTON_EVENT_RELEASE_UP:
 			//TODO
 			break;
-		case BUTTON_EVENT_RELEASE_UP:
+		case BUTTON_EVENT_PRESS_DOWN:
 			//TODO
 			break;		
 	}
